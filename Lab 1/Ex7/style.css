@@ -1,0 +1,50 @@
+#header-flex-container {
+    display: flex;
+}
+
+#dot1 {
+    background-color: red;
+}
+
+#dot2 {
+    background-color: yellow;
+}
+
+#dot3 {
+    background-color: green;
+}
+
+#header-flex-container div {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+#flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header {
+    height: 5vw;
+    background-color: lightgrey;
+    margin-bottom: 20px;
+}
+
+#flex-container div figure img {
+    background-size: cover;
+}
+
+#flex-container div figure {
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0px 0px 2px 0px gray;
+}
+
+.title {
+    color: blue;
+}
