@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: yellow;
+}
+
+#menu-flex-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100vw;
+}
+
+#menu {
+    margin-top: 5%;
+    display: block;
+    width: 40%;
+    border-bottom-left-radius: 2% 5%;
+    border-bottom-right-radius: 2% 5%;
+    border-top-left-radius: 2% 5%;
+    border-top-right-radius: 2% 5%;
+    overflow: hidden;
+    list-style: none;
+}
+
+.btn {
+    display: block;
+    padding: 5%;
+    background-color: #ff6cb8;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-size: 5vw;
+}
+
+.btn:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #ff6cb8;
+    position: absolute;
+    right: 3%;
+    bottom: -10px;
+    z-index: 9;
+}
+
+#btn1 {
+    display: block;
+    padding: 5%;
+    background-color: #ff6cb8;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-size: 5vw;
+}
+
+.sub {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: navy;
+    overflow: hidden;
+    transition: 0.5s ease;
+    max-height: 0;
+}
+
+.sub a {
+    display: block;
+    padding: 5% 7%;
+    font-size: 4vw;
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+
+.sub a:hover {
+    background: linear-gradient(to bottom, navy 0%, navy 50%, cornflowerblue 51%, cornflowerblue 100%);
+}
+
+.sub a:hover:before {
+    position: absolute;
+    content: '';
+    width: 3vw;
+    aspect-ratio: 1/1;
+    background-color: yellow;
+    top: 50%;
+    left: min(-2vw, -2vh);
+    z-index: 1;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.sub a:hover:after{
+    position: absolute;
+    content: '';
+    height: max(3vw, 3vh);
+    aspect-ratio: 1/1;
+    background-color: yellow;
+    top: 50%;
+    right: min(-2vw, -2vh);
+    transform: translate(0, -50%) rotate(45deg);
+    z-index: 1;
+}
+
+.sub a:hover {
+    background-color: gray;
+}
+
+.sub > a:last-child {
+    border: none;
+}
+
+.menu-item:target .sub {
+    max-height: 50vh;
+}
