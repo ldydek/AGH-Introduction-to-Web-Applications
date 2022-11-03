@@ -1,0 +1,25 @@
+.photo {
+    width: 600px;
+    height: 400px;
+}
+
+#photo1 {
+    border: 5px solid red;
+    position: absolute;
+}
+
+#photo2 {
+    border: 5px solid blue;
+    position: absolute;
+}
+
+#photo3 {
+    border: 5px solid green;
+    position: absolute;
+}
+
+#button {
+    position: absolute;
+    top: 450px;
+    font-size: 50px;
+}
