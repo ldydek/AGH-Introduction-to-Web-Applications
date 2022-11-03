@@ -1,0 +1,28 @@
+.photo {
+    width: 600px;
+    height: 400px;
+}
+
+#photo1 {
+    border: 5px solid red;
+    position: absolute;
+    visibility: visible;
+}
+
+#photo2 {
+    border: 5px solid blue;
+    position: absolute;
+    visibility: hidden;
+}
+
+#photo3 {
+    border: 5px solid green;
+    position: absolute;
+    visibility: hidden;
+}
+
+#button {
+    position: absolute;
+    top: 450px;
+    font-size: 50px;
+}
