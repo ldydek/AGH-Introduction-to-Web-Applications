@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    background-color: yellow;
+    gap: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#container > button, div {
+    flex: 1;
+    height: 20%;
+}
+
+#container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    height: 30%;
+}
+
+#container > div {
+    background-color: white;
+}
+
+#button2 {
+    font-size: 12px;
+}
+
