@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(216, 237, 238);
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 5%;
+}
+
+#header > p {
+    font-size: max(3vw, 30px);
+}
+
+#p1 {
+    color: cornflowerblue;
+}
+
+#image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#image-container > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: gray;
+    cursor: pointer;
+}
+
+#image-container > button:hover {
+    background-color: black;
+}
+
+.div {
+    box-shadow: 0px 0px 5px 5px rgb(204, 201, 201);
+}
+
+.image {
+    border: 5px solid white;
+    box-shadow: 2px black;
+}
+
+.img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+main > p {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-left: 7%;
+    margin-right: 7%;
+    text-align: center;
+}
+
+#name {
+    color: cornflowerblue;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer > p {
+    content: "\201D";
+    text-align: center;
+    color: cornflowerblue;
+    font-size: max(50px, 5vw);
+}
+
+#card > div {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow-button {
+    height: 50%;
+    width: 50%;
+}
+
+.arrow-button--l {
+    border-bottom: 3px solid white;
+    border-left: 3px solid white;
+    transform: translateX(25%) rotate(45deg);
+}
+
+.arrow-button--r {
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: translateX(-25%) rotate(45deg);
+}
+
+section > div > button {
+    border: 0;
+    background-color: gray;
+    padding: max(3px, 1%);
+    border-radius: 10px;
+    width: 12em;
+    cursor: pointer;
+}
+
+section > div > button:hover {
+    background-color: black;
+}
+
+section > div > button > p {
+    width: 100%;
+    color: white;
+    padding: max(1%, 3px);
+}
+
+.animation-left2 {
+    animation-name: moveInLeft2;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+.animation-right2 {
+    animation-name: moveInRight2;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+
+@keyframes moveInLeft2 {
+    0%{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes moveInRight2 {
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
