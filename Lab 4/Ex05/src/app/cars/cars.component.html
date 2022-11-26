@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Car selector</h2>
+  
+    <div class="brand-container">
+        <label for="brands">Choose a brand: </label>
+        <select name="brands" id="brands" [(ngModel)]="selectedBrand" (change)="changeBrand()">
+          <option *ngFor="let car of cars">
+            {{car.brand}}
+          </option>
+        </select>
+    </div>
+
+    <div class="model-container" [hidden]="selectedBrand == ''">
+        <label for="models">Choose a model: </label>
+        <select name="models" id="models" [(ngModel)]="selectedModel" (change)="changeModel()">
+          <option *ngFor="let model of models" [value]="model.name">
+            {{model.name}}
+          </option>
+        </select>
+    </div>
+    
+    <div class="color-container">
+        <p [hidden]="selectedModel == ''">Choose a color: </p>
+        <div class="color-block" *ngFor="let color of colors"
+              [ngStyle]="{'background-color': color}" (click)="changeColor(color)" [hidden]="selectedModel == ''"></div>
+    </div>
+    
+    <div class="result" [hidden]="selectedColor == ''" >
+        <h3>You've chosen {{selectedColor}} {{selectedBrand}} {{selectedModel}}</h3>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    font-family: Arial, serif;
+    padding: 2%;
+    align-items: center;
+    gap: 5vh;
+}
+  
+.container h2 {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+}
+  
+.container select {
+    min-width: 200px;
+    font-size: 120%;
+}
+  
+.color-container {
+    display: flex;
+    flex-direction: row;
+}
+  
+.color-block {
+    width: 40px;
+    height: 40px;
+}
