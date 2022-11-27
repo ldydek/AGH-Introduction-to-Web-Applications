@@ -1,0 +1,9 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+div > app-chosen-card {
+    text-align: center;
+    height: 100px;
+}
