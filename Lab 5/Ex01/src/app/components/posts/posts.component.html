@@ -1,0 +1,17 @@
+<app-new-post></app-new-post>
+<div id="container">
+    <div id="single-post" *ngFor="let post of data.posts">
+      <p class="posts-id">
+        ID: {{post.id}}
+      </p>
+      <p class="posts-userid">
+        User ID: {{post.userId}}
+      </p>
+      <p class="posts-title">
+        {{post.title}}
+      </p>
+      <p class="posts-body">
+        {{post.body}}
+      </p>
+    </div>
+</div>

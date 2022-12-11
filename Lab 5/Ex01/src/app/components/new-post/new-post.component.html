@@ -1,0 +1,28 @@
+<div id="container">
+    <form id="form-container" [formGroup]="post" (ngSubmit)="onSubmit()">
+        <h2>Create new post</h2>
+        <div class="add-element">
+          <label for="userId">User ID: </label>
+          <input id="userId" type="number" formControlName="userId">
+          <p class="alert" *ngIf="post.get('userId')!.hasError('required') &&
+          (post.get('userId')!.touched || post.get('userId')!.dirty)">User ID is required</p>
+          <p class="alert" *ngIf="post.get('userId')!.hasError('min') &&
+          (post.get('userId')!.touched || post.get('userId')!.dirty)">User ID cannot be negative</p>
+        </div>
+        <div class="add-element">
+          <label for="title">Title: </label>
+          <input id="title" type="text" formControlName="title">
+          <p class="alert" *ngIf="post.get('title')!.hasError('required') &&
+          (post.get('title')!.touched || post.get('title')!.dirty)">Title is required</p>
+        </div>
+        <div class="add-element">
+          <label for="body">Text: </label>
+          <input id="body" type="text" formControlName="body">
+          <p class="alert" *ngIf="post.get('body')!.hasError('required') &&
+          (post.get('body')!.touched || post.get('body')!.dirty)">Text is required</p>
+        </div>
+        <div class="add-element">
+          <button type="submit" [disabled]="!post.valid">Add</button>
+        </div>
+    </form>
+</div>
