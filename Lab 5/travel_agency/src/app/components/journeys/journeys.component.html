@@ -1,0 +1,8 @@
+<div id="card">
+    <div [ngClass]="{small_quantity:counter<10, big_quantity:counter>=10}" id="header">
+        <h2>Twoje rezerwacje</h2>
+        <p>Twoja ilość zarezerwowanych wycieczek: {{counter}}</p>
+    </div>
+    <div _ngcontent-skn-c19="" class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i _ngcontent-skn-c19="" class="bi bi-cart"></i></div>
+    <app-journey (delete)="removeJourney($event)" (counter)="add($event)" *ngFor="let journey of journeys" [journey]="journey" [minValue]="value1" [maxValue]="value2" [removeEvent]="removeEvent"></app-journey>
+</div>

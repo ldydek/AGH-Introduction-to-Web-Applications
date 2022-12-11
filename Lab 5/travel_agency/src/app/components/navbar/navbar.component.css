@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    height: 50px;
+    justify-content: space-evenly;
+    background-color: rgb(9, 174, 9);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+}

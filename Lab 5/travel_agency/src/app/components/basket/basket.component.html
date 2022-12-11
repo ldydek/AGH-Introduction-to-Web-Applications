@@ -1,0 +1,7 @@
+<div id="basket">
+    <h1>Koszyk</h1>
+    <p id="cost">Kwota do zapłaty: {{basketService.getCost()}}</p>
+    <div class="basket-item" *ngFor="let item of basketService.basket">
+        <p>{{item.name}} x {{item.quantity}}</p>
+    </div>
+</div>
