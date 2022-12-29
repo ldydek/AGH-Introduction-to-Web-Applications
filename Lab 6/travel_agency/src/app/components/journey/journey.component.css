@@ -11,8 +11,9 @@
     box-shadow: 0 0 10px gray;
     width: 40vw;
     border-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 20px;
+    padding-right: 50px;
+    background-color: wheat;
 }
 
 #inside-card {

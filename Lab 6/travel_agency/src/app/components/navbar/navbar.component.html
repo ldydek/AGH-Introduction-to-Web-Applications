@@ -5,16 +5,14 @@
         </a>
     </div>
     <div class="menu-item">
-        <a routerLink="/journeys">Oferty</a>
+        <a *ngIf="user.type <= 0" routerLink="/journeys">Oferty</a>
+        <a *ngIf="user.type >= 1" routerLink="/journeys">Zarządzaj wycieczkami</a>
     </div>
-    <div class="menu-item">
+    <div class="menu-item" *ngIf="user.type == 0">
         <a routerLink="/basket">Koszyk</a>
     </div>
-    <div class="menu-item" *ngIf="user.type >= 1">
+    <div class="menu-item" *ngIf="user.type == 0">
         <a routerLink="/history">Twoje zakupy</a>
-    </div>
-    <div class="menu-item" *ngIf="user.type >= 1">
-        <a routerLink="./addnewjourney" routerLinkActive="active">Dodaj wycieczkę</a>
     </div>
     <div class="menu-item" *ngIf="user.type >= 2">
         <a routerLink="/admin" routerLinkActive="active">Widok admina</a>

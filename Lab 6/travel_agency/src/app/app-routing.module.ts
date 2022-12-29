@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'home', component: StartComponent},
   {path: 'journeys/:id', component: JourneyDetailsComponent},
   {path: 'addnewjourney', component: AddJourneyComponent, canActivate: [LoginGuard, ManagerGuard]},
-  {path: 'basket', component: BasketComponent},
+  {path: 'basket', component: BasketComponent, canActivate: [LoginGuard]},
   {path: 'history', component: HistoryComponent, canActivate: [LoginGuard]},
   {path: 'login', component: LoginComponent, canActivate: [GuestGuard]},
   {path: 'signup', component: SignupComponent, canActivate: [GuestGuard]},

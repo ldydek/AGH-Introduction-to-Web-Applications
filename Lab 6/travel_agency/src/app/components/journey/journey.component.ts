@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Journey } from 'src/app/classes/journey';
 import { User } from 'src/app/classes/user';
+import { AuthService } from 'src/app/services/auth.service';
 import { BasketService } from 'src/app/services/basket.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -25,10 +26,11 @@ export class JourneyComponent implements OnInit {
   edgePrice: Number = 0
   rating: number = 0;
   starCount: number = 5;
-  inJourneys : boolean = true
+  inJourneys: boolean = true
   user!: User
+  guest = new User('amogus', 'guest', 'none', -1, [], false);
 
-  constructor(public basketService: BasketService) {
+  constructor(public basketService: BasketService, public authService: AuthService, public userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -41,7 +43,19 @@ export class JourneyComponent implements OnInit {
       this.checkPrice()
       this.removeEvent.subscribe(() => this.checkPrice)
     }
+
+    this.authService.userData.subscribe(user => {
+      if (user != null) {
+        this.userService.users.subscribe(e => {
+          this.user = e.filter((usr: { key: string; }) => usr.key == user.uid)[0];
+        })
+      }
+      else {
+        this.user = this.guest;
+      }
+    });
   }
+
 
   add() {
     this.journey.maxTickets--;

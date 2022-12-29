@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Journey } from 'src/app/classes/journey';
 import { BasketService } from 'src/app/services/basket.service';
 import { DataBaseService } from 'src/app/services/database.service';
+import { User } from 'src/app/classes/user';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,8 +17,11 @@ export class JourneysComponent implements OnInit {
   value2 = -Infinity
   counter: number = this.getDataFromBasket()
   removeEvent: EventEmitter<any> = new EventEmitter();
+  user!: User
+  guest = new User('amogus', 'guest', 'none', -1, [], false);
 
-  constructor(private dataBaseService: DataBaseService, private basketService: BasketService) {
+  constructor(private dataBaseService: DataBaseService, private basketService: BasketService, public authService: AuthService, 
+    public userService: UserService) {
     // dataBaseService.initdada()
     dataBaseService.getData().subscribe({
       next : data => this.getData(data),
@@ -25,6 +30,16 @@ export class JourneysComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.userData.subscribe(user => {
+      if (user != null) {
+        this.userService.users.subscribe(e => {
+          this.user = e.filter((usr: { key: string; }) => usr.key == user.uid)[0];
+        })
+      }
+      else {
+        this.user = this.guest;
+      }
+    });
   }
 
   find_max() {
