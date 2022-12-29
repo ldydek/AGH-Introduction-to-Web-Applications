@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 40vw;
+    text-align: center;
+}
+
+#history {
+    width: 100%;
+    -webkit-box-shadow: 0 0 10px gray;
+    box-shadow: 0 0 10px gray;
+    background-color: lightblue;
+    border: 1px solid gray;
+}
+
+.single-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    padding: 4px;
+}

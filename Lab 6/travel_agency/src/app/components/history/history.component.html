@@ -1,0 +1,8 @@
+<div id="container">
+    <h2>Historia odbytych wycieczek</h2>
+    <div id="history">
+        <div *ngFor="let item of boughtJourneys" class="single-item">
+            <p>{{item.journeyId}}</p>
+        </div>
+    </div>
+</div>
