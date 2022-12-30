@@ -12,7 +12,8 @@
 
 <h3>Exercise 3</h3>
 
-![Ex03](https://user-images.githubusercontent.com/91955435/210113255-75681bf5-0bc4-4e29-a71a-1488488d7bc8.gif)
+![Ex03_1](https://user-images.githubusercontent.com/91955435/210114334-7dcaa6f7-8e1d-4c39-8a2d-7712bf220e49.gif)
+![Ex03_2](https://user-images.githubusercontent.com/91955435/210114347-50c1df4f-19ed-4f0e-8be8-fa58af13d385.gif)
 
 <h3>Exercise 4</h3>
 
