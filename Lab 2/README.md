@@ -1,4 +1,4 @@
-<h2>My solutios are presented below</h2>
+<h2>My solutions are presented below</h2>
 
 <h3>Exercise 0</h3>
 
