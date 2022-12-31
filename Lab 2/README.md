@@ -19,3 +19,23 @@
 
 ![Ex04_1](https://user-images.githubusercontent.com/91955435/210113286-8c4a87fc-871e-4df3-b205-f61dd7c0ded7.gif)
 ![Ex04_2](https://user-images.githubusercontent.com/91955435/210113288-2ac51779-ed12-45c3-8793-457149b254ce.gif)
+
+<h3>Exercise 5</h3>
+
+![Ex05](https://user-images.githubusercontent.com/91955435/210144832-08c5e6bb-9b11-40a5-8eb1-e443674ed41b.gif)
+
+<h3>Exercise 6</h3>
+
+<h3>Exercise 7</h3>
+
+![Ex07](https://user-images.githubusercontent.com/91955435/210144871-1b1a30c4-a677-4479-88e7-73bc6ba63237.gif)
+
+<h3>Exercise 8</h3>
+
+![Ex08](https://user-images.githubusercontent.com/91955435/210145019-675ad7b7-d120-412c-906f-948a5386d1ae.gif)
+
+<h3>Exercise 9</h3>
+
+![Ex09](https://user-images.githubusercontent.com/91955435/210145105-41a958bd-70a2-4ef0-ad57-66f26702d0ff.gif)
+
+
