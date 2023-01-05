@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant SC', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-flex-container {
+    display: flex;
+    width: 100vw;
+    height: 30vw;
+    background-color: #057aec;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    flex: 55;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    justify-content: center;
+    gap: 8%;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#div2 {
+    display: flex;
+    flex: 45;
+}
+
+article>h1,
+p,
+#button {
+    color: white;
+}
+
+article>h1 {
+    font-size: 3vw;
+}
+
+article>p {
+    font-size: max(10px, 1.5vw);
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max(9vw, 60px);
+    border: 1px solid white;
+    padding: 2% 4% 2% 4%;
+    font-size: 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button div {
+    white-space: nowrap;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 10px;
+    width: 30vw;
+    position: absolute;
+    top: 4vw;
+    right: 4vw;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    box-shadow: 0 0 15px #00000080;
+}
+
+form h1 {
+    color: gray;
+    font-size: 2.5vw;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    flex: 1;
+}
+
+.form-element {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    flex: 1;
+}
+
+.form-element input {
+    border-style: hidden;
+    font-size: 2vw;
+    outline: none;
+    border-bottom: 1px solid lightgray;
+}
+
+#form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #057aec;
+    color: white;
+    align-self: flex-start;
+    flex: 1;
+    margin: 2.5vw;
+    width: max(30%, 40px);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    padding: 10px;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(-15px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    80% {
+        transform: translateX(15px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #div2 {
+        display: none;
+    }
+
+    form {
+        top: 40vw;
+        right: 35vw;
+    }
+
+    #main-flex-container {
+        height: 50vw;
+    }
+
+    #main-flex-container p {
+        font-size: min(2.5vw, 50px);
+    }
+}
