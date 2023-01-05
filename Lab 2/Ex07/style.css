@@ -1,0 +1,143 @@
+* {
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+
+.frame {
+    width: 100%;
+    height: 2000px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.frame>img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    margin-left: 6%;
+    margin-top: 2%;
+    z-index: 1;
+}
+
+
+#v-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 150px;
+    margin-left: 6%;
+    margin-top: 400px;
+    border-radius: 15px;
+    background-color: white;
+    z-index: 1;
+}
+
+.v-button {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+#v-button1 {
+    background-color: white;
+    border: 0.3px solid black;
+}
+
+#v-button2 {
+    background-color: yellow;
+}
+
+#v-button3 {
+    background-color: green;
+}
+
+#v-button4 {
+    background-color: blue;
+}
+
+#v-button5 {
+    background-color: green;
+}
+
+#v-button6 {
+    background-color: black;
+}
+
+#video-call {
+    display: flex;
+    width: 90vw;
+    height: 600px;
+    background-color: rgb(19, 12, 97);
+    border-top: 4px solid rgb(227, 219, 204);
+    border-bottom: 16px solid rgb(227, 219, 204);
+    border-left: 12px solid rgb(227, 219, 204);
+    border-right: 12px solid rgb(227, 219, 204);
+    margin: auto;
+}
+
+#photo {
+    position: relative;
+    width: 900px;
+    height: 600px;
+}
+
+#photo>img {
+    width: min(900px, 90vw);
+    height: 100%;
+}
+
+aside {
+    width: 25%;
+}
+
+#h-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    position: absolute;
+    top: 85%;
+    width: 100%;
+    height: 40px;
+}
+
+.h-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    height: inherit;
+    border-radius: 50%;
+}
+
+#h-red-button {
+    background-color: red;
+}
+
+.white-button {
+    background-color: white;
+}
+
+.white-button img {
+    width: 70%;
+    height: 70%;
+}
+
+#h-red-button img {
+    width: 70%;
+    height: 70%;
+}
+
+@media screen and (max-width: 1000px) {
+    #video-call {
+        height: 60vw;
+    }
+
+    #photo {
+        height: 60vw;
+    }
+}
