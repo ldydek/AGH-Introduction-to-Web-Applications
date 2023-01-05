@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-color: whitesmoke;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-top: 20px;
+    flex: 1;
+}
+
+main {
+    flex: 3;
+    margin: 1rem;
+    background-color: white;
+    height: 100vh;
+}
+
+nav>div {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    border-radius: 0 20px 20px 0;
+    color: #0000ff;
+    padding-left: 10%;
+    margin-right: 20px;
+}
+
+nav div img {
+    width: 30px;
+    height: 30px;
+    padding-right: 5%;
+    flex: 1;
+}
+
+nav div img {
+    filter: invert(8%) sepia(99%) saturate(6660%) hue-rotate(247deg) brightness(102%) contrast(142%);
+}
+
+nav div:hover img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(290deg) brightness(104%) contrast(101%);
+}
+
+nav div:hover {
+    background-color: #1f93a0;
+}
+
+nav div span {
+    flex: 6;
+    font-size: 1.2vw;
+}
+
+#number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5vw;
+    margin-right: 2vw;
+    color: #1f93a0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    padding: max(5%, 10px);
+    border: 1px solid #1f93a0;
+}
+
+#paragraph {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    nav div span {
+        display: none;
+    }
+
+    nav {
+        flex: 1;
+    }
+
+    main {
+        flex: 6;
+        transition: 3s ease;
+    }
+
+    #menu-item {
+        position: relative;
+    }
+
+    #number {
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        left: 8vw;
+    }
+}
