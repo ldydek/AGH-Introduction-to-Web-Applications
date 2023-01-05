@@ -26,6 +26,8 @@
 
 <h3>Exercise 6</h3>
 
+![Ex06](https://user-images.githubusercontent.com/91955435/210681937-8fe11a6d-e49c-4669-a185-8ad188b8a7d4.gif)
+
 <h3>Exercise 7</h3>
 
 ![Ex07](https://user-images.githubusercontent.com/91955435/210144871-1b1a30c4-a677-4479-88e7-73bc6ba63237.gif)
@@ -37,5 +39,13 @@
 <h3>Exercise 9</h3>
 
 ![Ex09](https://user-images.githubusercontent.com/91955435/210145105-41a958bd-70a2-4ef0-ad57-66f26702d0ff.gif)
+
+<h3>Exercise 10</h3>
+
+![Ex10](https://user-images.githubusercontent.com/91955435/210681905-b6d72474-2e7a-44b6-b480-9b377e9073d1.gif)
+
+<h3>Exercise 11</h3>
+
+![Ex11](https://user-images.githubusercontent.com/91955435/210681920-0873d351-e70e-4673-b21c-c95cec0c48c4.gif)
 
 
