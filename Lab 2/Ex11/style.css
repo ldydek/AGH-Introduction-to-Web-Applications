@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(240, 240, 76);
+}
+
+#menu-container {
+    width: 30vw;
+    background-color: rgb(244, 105, 186);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.menu-item {
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.show-div {
+    padding: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#top-div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#end {
+    padding: 15px;
+}
+
+.show:checked~.show-div {
+    background-color: brown;
+}
+
+.show:not(:checked)~.hide-div {
+    height: 0;
+}
+
+.show:checked {
+    display: none;
+}
+
+.show:not(:checked)+.hide {
+    display: none;
+}
+
+.hide-div {
+    background-color: rgb(31, 31, 146);
+    cursor: pointer;
+    height: 152px;
+    transition: height 0.5s;
+}
+
+.hide-div>p {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.show-div:after {
+    display: none;
+    content: "";
+    position: absolute;
+    right: max(10px, 2vw);
+    top: 47px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid brown;
+}
+
+.show:checked~.show-div:after {
+    display: block;
+}
+
+.hide-div>p:hover {
+    background: linear-gradient(to bottom, navy 0%, navy 50%, cornflowerblue 51%, cornflowerblue 100%);
+}
+
+.hide-div>p:hover:before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    background-color: rgb(240, 240, 76);
+    width: 40px;
+    height: 110%;
+    transform: rotate(45deg) skew(-5deg, -5deg)
+}
+
+.hide-div>p:hover:after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    background-color: rgb(240, 240, 76);
+    width: 40px;
+    height: 110%;
+    transform: rotate(45deg) skew(-5deg, -5deg)
+}
