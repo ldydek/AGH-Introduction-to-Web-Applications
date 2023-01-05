@@ -51,3 +51,12 @@
 <h3>Exercise 11</h3>
 
 ![Ex11](https://user-images.githubusercontent.com/91955435/210681920-0873d351-e70e-4673-b21c-c95cec0c48c4.gif)
+
+<h3>Exercise 12</h3>
+
+![Ex12](https://user-images.githubusercontent.com/91955435/210853803-77d0e2bf-fe46-4edf-8964-307440adf287.gif)
+
+<h3>Exercise 13</h3>
+
+![Ex13](https://user-images.githubusercontent.com/91955435/210853851-195943f2-46f0-4aed-8b30-3d880ee6ea5c.gif)
+
