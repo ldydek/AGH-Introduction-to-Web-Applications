@@ -1,22 +1,26 @@
-document.querySelector("#button1").addEventListener('click', on_off);
-document.querySelector("#button2").addEventListener('click', counter_button);
-let counter = -1;
-let value = 0;
+document.querySelector("#button1").addEventListener('click', onOff);
+document.querySelector("#button2").addEventListener('click', count);
+let value = -1;
+let counter = 0;
+let counterContainer = document.querySelector("#counter-container");
+let switchButton = document.querySelector("#button1");
+let counterButton = document.querySelector("#button2");
 
-function on_off() {
-    counter++;
-    options = ["WŁĄCZONY", "WYŁĄCZONY"];
-    document.querySelector("#button2").innerHTML = options[counter%2];
-    document.querySelector("#button2").style.color = "red";
-    if (counter % 2 == 1) {
-        value = 0;
-        document.querySelector("#container > div").innerHTML = value;
+function onOff() {
+    value++;
+    let switchButtonOptions = ["WYŁĄCZ", "URUCHOM"];
+    let counterButtonOptions = ["WŁĄCZONY", "WYŁĄCZONY"];
+    switchButton.innerHTML = switchButtonOptions[value % 2] + " PRZYCISK";
+    counterButton.innerHTML = counterButtonOptions[value % 2];
+    if (value % 2 == 1) {
+        counter = 0;
+        counterContainer.innerHTML = counter;
     }
 }
 
-function counter_button() {
-    if (counter % 2 == 0) {
-        value++;
-        document.querySelector("#container > div").innerHTML = value;
+function count() {
+    if (value % 2 == 0) {
+        counter++;
+        counterContainer.innerHTML = counter;
     }
 }
