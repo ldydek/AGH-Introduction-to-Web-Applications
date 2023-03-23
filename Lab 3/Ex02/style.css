@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 100px;    
+}
+
+.photo {
+    width: 600px;
+    height: 400px;
+}
+
+#photo1 {
+    border: 10px solid red;
+}
+
+#photo2 {
+    display: none;
+    border: 10px solid blue;
+}
+
+#photo3 {
+    display: none;
+    border: 10px solid green;
+}
+
+#button {
+    background-color: rgb(49, 48, 48);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 12px 20px 12px 20px;
+    border-radius: 10px;
+}
+
+#button:hover {
+    background-color: rgb(31, 29, 29);
+}
