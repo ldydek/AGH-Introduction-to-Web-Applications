@@ -1,13 +1,13 @@
 let removeButton = document.querySelectorAll(".remove-button");
-let addButton = document.querySelector("#add");
+let addButton = document.querySelector("#add-button");
 let usersList = document.querySelectorAll(".single-user");
-let phone1;
-let phone2;
+let userSection = document.querySelector("#user-section");
+let firstUser = usersList[0];
 
 addButton.addEventListener("click", addUser);
-for (let i=0; i<usersList.length;  i++) {
+for (let i = 0; i < usersList.length; i++) {
     removeButton[i].addEventListener("click", () => {
-        document.querySelector("#user-section").removeChild(usersList[i]);
+        userSection.removeChild(usersList[i]);
     });
 }
 
@@ -19,7 +19,7 @@ function addUser() {
         alert("Podaj imię i nazwisko!");
         return;
     }
-    if (!(onlyNumbers(phone) == true && (myLength(phone) == 9 || (myLength(phone) == 12 && firstSign(phone) == "+")))) {
+    if (!(checkOnlyNumbers(phone) == true && (countLength(phone) == 9 || (countLength(phone) == 12 && getFirstSign(phone) == "+")))) {
         alert("Podaj poprawny numer telefonu!");
         return;
     }
@@ -28,34 +28,15 @@ function addUser() {
         return;
     }
     else {
-        let userSection = document.querySelector("#user-section");
-        let singleUser = document.createElement("section");
-        let removeData = document.createElement("div");
-        let data = document.createElement("div");
-        let removeButton = document.createElement("button");
-        let p1 = document.createElement("p");
-        let p2 = document.createElement("p");
+        let newUser = firstUser.cloneNode(true);
+        userSection.appendChild(newUser);
+        newUser.querySelector("#name-paragraph").innerHTML = name;
+        newUser.querySelector("#phone-paragraph").innerHTML = changePhone(phone);
 
-        singleUser.className = "single-user";
-        data.className = "data";
-        removeData.className = "remove-data";
-        removeButton.className = "remove-button";
-        removeButton.innerHTML = "<i class=\"fa fa-trash\"></i>";
+        let usersList = document.querySelectorAll(".single-user");
 
-        userSection.appendChild(singleUser);
-        singleUser.appendChild(data);
-        singleUser.appendChild(removeData);
-        removeData.appendChild(removeButton);
-        data.appendChild(p1);
-        data.appendChild(p2);
-        p1.innerHTML = name;
-        p2.innerHTML = changePhone(phone);
-
-        usersList = document.querySelectorAll(".single-user");
-
-        removeButton.addEventListener("click", () => {
-            document.querySelector("#user-section").removeChild(usersList[usersList.length-1]);
-            usersList = document.querySelectorAll(".single-user");
+        newUser.querySelector(".remove-button").addEventListener("click", () => {
+            userSection.removeChild(usersList[usersList.length - 1]);
         });
 
         document.querySelector("#name").value = "";
@@ -63,88 +44,51 @@ function addUser() {
     }
 }
 
-function myLength(phone) {
-    ctr = phone.length
-    for (let i=0; i<phone.length; i++) {
-        if (phone[i] == " ") {
-            ctr -= 1;
-        }
-    }
-    return ctr;
+// deleting white spaces in a string
+function deleteWhiteSpaces(string) {
+    return string.replace(/\s/g, '');
 }
 
-function firstSign(phone) {
-    ctr = 0
-    while (phone[ctr] == " ") {
-        ctr += 1
-    }
-    return phone[ctr];
+function countLength(phone) {
+    phone = deleteWhiteSpaces(phone);
+    return phone.length;
 }
 
+function getFirstSign(phone) {
+    return phone[0];
+}
+
+// adding spaces between digits in a phone number to display it nicely on the board
 function changePhone(phone) {
-    phone1 = "";
-    let ctr = 0
-    for (let i=0; i<phone.length; i++) {
-        if (phone[i] != " ") {
-            phone1 += phone[i];
-            ctr += 1
+    phone = deleteWhiteSpaces(phone);
+    let prettyPhone = "";
+    for (let counter = 0; counter < phone.length; counter++) {
+        if (counter % 3 == 0) {
+            prettyPhone += " ";
         }
-        if (ctr % 3 == 0) {
-            phone1 += " ";
-        }
+        prettyPhone += phone[counter];
     }
-    return phone1;
+    prettyPhone.trimStart();
+    return prettyPhone;
 }
 
-function onlyNumbers(str) {
-    phone2 = "";
-    for (let i=0; i<str.length; i++) {
-        if (str[i] != " ") {
-            phone2 += str[i];
-        }
+function checkOnlyNumbers(string) {
+    string = deleteWhiteSpaces(string);
+    if (getFirstSign(string) == "+") {
+        string = string.substring(1);
     }
-    if (firstSign(phone2) == "+") {
-        phone2 = phone2.substring(1);
-    }
-    return /^[0-9]+$/.test(phone2);
+    return /^[0-9]+$/.test(string);
 }
 
-function onlyLetters(str) {
-    return /^[a-żA-Ż]+$/.test(str);
+function checkOnlyLetters(string) {
+    return /^[a-ząćęłńóśźżA-ZĄĆĘŁŃÓŚŹŻ]+$/.test(string);
 }
 
-function bigLetter(str) {
-    return str[0].toUpperCase() == str[0]
+function bigLetter(string) {
+    return string[0].toUpperCase() == string[0];
 }
 
-function checkName(str) {
-    const arr = str.split(' ');
-    if (arr.length != 2) {
-        return false;
-    }
-    for (let i=0; i<2; i++) {
-        if (bigLetter(arr[i]) == false || onlyLetters(arr[0]) == false) {
-            return false;
-        }
-    }
-    if (onlyLetters(arr[1]) == false && arr[1].split("-").length - 1 == 1) {
-        return findSign(arr[1]);
-    }
-    else if (onlyLetters(arr[1]) == true) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-function findSign(str) {
-    for (let i=0; i<str.length; i++) {
-        if (str[i] == '-') {
-            if (i + 1 >= str.length || str[i+1].toUpperCase() != str[i+1]) {
-                return false;
-            }
-        }
-    }
-    return true;
+// using regex here and in some other functions above as well
+function checkName(string) {
+    return /^[ ]*[A-ZŁŚŹŻ][a-ząćęłńóśźż]*[ ]*[A-ZŁŚŹŻ][a-ząćęłńóśźż]*(-[A-ZŁŚŹŻ][a-ząćęłńóśźż]*){0,1}[ ]*$/.test(string);
 }
