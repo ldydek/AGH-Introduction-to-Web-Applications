@@ -40,7 +40,7 @@
 
 <h3>Exercise 8</h3>
 
-![Ex08](https://user-images.githubusercontent.com/91955435/227807704-489b3374-ef82-4028-951b-625b02e611f6.gif)
+![Ex08](https://user-images.githubusercontent.com/91955435/227807974-01bfa383-2fcd-42e8-97eb-2d37d29021f3.gif)
 
 <h3>Exercise 9</h3>
 
