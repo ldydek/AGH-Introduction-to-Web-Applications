@@ -1,0 +1,44 @@
+#content {
+    padding: 10px;
+    width: 700px;
+    padding-top: 10px;
+    margin: auto;
+}
+
+#header {
+    color: darkslategrey;
+    border: dashed dimgrey;
+    border-width: 1px 0 1px 1px;
+}
+
+#intro {
+    border: dashed dimgrey;
+    border-width: 0px 0px 0px 1px;
+    margin: 0;
+}
+
+#grid-container {
+    display: grid;
+    width: 600px;
+    height: 800px;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    gap: 20px;
+    padding: 10px 0px 0px 0px;
+}
+
+.image-item {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.font-property {
+    font-size: 13px;
+}
+
+.photo {
+    margin: 0;
+}
