@@ -44,5 +44,4 @@
 
 <h3>Exercise 9</h3>
 
-![Ex09](https://user-images.githubusercontent.com/91955435/227807711-b24b1e2d-2127-4fea-9748-7e8277b34401.gif)
-
+![Ex09](https://user-images.githubusercontent.com/91955435/227807868-83c36a43-6631-4460-bd62-2366ec22926e.gif)
