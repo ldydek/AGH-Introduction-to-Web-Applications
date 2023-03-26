@@ -7,7 +7,6 @@
 ![image](https://user-images.githubusercontent.com/91955435/227805624-8ef03374-96e6-43a6-8503-a1b95fedecbf.png)
 
 <h3>Exercise 2a</h3>
-<hr>
 
 ![image](https://user-images.githubusercontent.com/91955435/227805594-2e5583e4-6043-484b-b509-dc74fed091c9.png)
 
