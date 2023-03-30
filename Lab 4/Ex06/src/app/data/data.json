@@ -1,0 +1,14 @@
+[
+    {
+        "title": "The Basics",
+        "description": "Core Angular basics you should know"
+    },
+    {
+        "title": "Components",
+        "description": "Components are a core concept for building Angular UI and apps"
+    },
+    {
+        "title": "Events",
+        "description": "Events are important in Angular"
+    }
+]

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Topic } from '../topicscard/topic';
-import { AdditionalDataService } from 'src/app/services/additional-data.service';
+import { Component, OnInit } from '@angular/core';
+import { CardService } from 'src/app/services/card.service';
+import { Card } from '../../interfaces/card';
 
 @Component({
   selector: 'app-chosen-card',
@@ -8,13 +8,14 @@ import { AdditionalDataService } from 'src/app/services/additional-data.service'
   styleUrls: ['./chosen-card.component.css']
 })
 export class ChosenCardComponent {
-  selected: boolean = false;
-  topic: Topic;
 
-  constructor(private sharedDataService: AdditionalDataService) {
-    sharedDataService.selectedTopic$.subscribe(topic => {
-      this.selected = true;
-      this.topic = topic;
+  constructor(private cardService: CardService) {}
+
+  card: Card;
+
+  ngOnInit(): void {
+    this.cardService.OnLoadDataClicked.subscribe((data: Card) => {
+      this.card = data;
     })
   }
 }
