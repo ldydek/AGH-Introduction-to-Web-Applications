@@ -1,0 +1,49 @@
+nav {
+    display: flex;
+    width: 80%;
+    height: 50px;
+    background-color: rgb(237, 234, 234);
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+    border-right: 1px dashed gray;
+    margin: auto;
+}
+
+.nav-element {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding-left: 30px;
+    padding-right: 20px;
+    gap: 10px;
+    border-left: 1px dashed gray;
+    cursor: pointer;
+}
+
+#special-nav-element {
+    background-color: white;
+    font-weight: bold;
+}
+
+.nav-element:hover {
+    background-color: greenyellow;
+    font-weight: bold;
+}
+
+/* hiding and displaying photos below */
+.first-image, .second-image {
+    width: 22px;
+    height: 22px;
+}
+
+.second-image {
+    display: none;
+}
+
+.nav-element:hover .first-image {
+    display: none;
+}
+
+.nav-element:hover .second-image {
+    display: block;
+}

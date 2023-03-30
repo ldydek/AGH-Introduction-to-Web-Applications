@@ -10,9 +10,10 @@ body {
     background-color: rgb(216, 237, 238);
 }
 
-#card {
+#entire-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 50vw;
 }
 
@@ -21,51 +22,15 @@ body {
     justify-content: center;
     gap: 20px;
     padding: 5%;
-}
-
-#header > p {
     font-size: max(3vw, 30px);
 }
 
-#p1 {
+#backslash {
     color: cornflowerblue;
 }
 
-#image-container {
+#card-with-buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-#image-container > button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border: 0;
-    background-color: gray;
-    cursor: pointer;
-}
-
-#image-container > button:hover {
-    background-color: black;
-}
-
-.div {
-    box-shadow: 0px 0px 5px 5px rgb(204, 201, 201);
-}
-
-.image {
-    border: 5px solid white;
-    box-shadow: 2px black;
-}
-
-.img {
-    width: 10vw;
-    height: 10vw;
-    border-radius: 50%;
 }
 
 main {
@@ -76,7 +41,50 @@ main {
     gap: 10px;
 }
 
-main > p {
+#main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+aside>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: gray;
+    cursor: pointer;
+    margin-top: 4vw;
+}
+
+aside>button:hover {
+    background-color: black;
+}
+
+#image-container {
+    display: flex;
+    align-items: center;
+    border: 5px solid white;
+    box-shadow: 2px black;
+    box-shadow: 0px 0px 5px 5px rgb(204, 201, 201);
+    border-radius: 50%;
+}
+
+#image {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+#name {
+    color: cornflowerblue;
+}
+
+article {
     margin-top: 1%;
     margin-bottom: 3%;
     margin-left: 7%;
@@ -84,23 +92,19 @@ main > p {
     text-align: center;
 }
 
-#name {
-    color: cornflowerblue;
-}
-
 footer {
     display: flex;
     justify-content: center;
 }
 
-footer > p {
+footer>p {
     content: "\201D";
     text-align: center;
     color: cornflowerblue;
     font-size: max(50px, 5vw);
 }
 
-#card > div {
+#card>div {
     display: flex;
     justify-content: center;
 }
@@ -122,7 +126,7 @@ footer > p {
     transform: translateX(-25%) rotate(45deg);
 }
 
-section > div > button {
+#bottom-button {
     border: 0;
     background-color: gray;
     padding: max(3px, 1%);
@@ -131,47 +135,80 @@ section > div > button {
     cursor: pointer;
 }
 
-section > div > button:hover {
+#bottom-button:hover {
     background-color: black;
 }
 
-section > div > button > p {
+#bottom-button>p {
     width: 100%;
     color: white;
     padding: max(1%, 3px);
 }
 
-.animation-left2 {
-    animation-name: moveInLeft2;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-}
-
-.animation-right2 {
-    animation-name: moveInRight2;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-}
-
-
-@keyframes moveInLeft2 {
-    0%{
+@keyframes leftIn {
+    0% {
         opacity: 0;
-        transform: translateX(200px);
+        transform: translateX(300px);
     }
 
-    100%{
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rightOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+}
+
+@keyframes leftOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+}
+
+@keyframes rightIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes randomIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
         opacity: 1;
     }
 }
 
-@keyframes moveInRight2 {
-    0%{
-        opacity: 0;
-        transform: translateX(-200px);
+@keyframes randomOut {
+    0% {
+        opacity: 1;
     }
 
-    100%{
-        opacity: 1;
+    100% {
+        opacity: 0;
     }
 }

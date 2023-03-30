@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript" defer></script>
 </head>
+
 <body>
-    <button id="dodaj">DODAJ</button>
-    <button id="usuń">USUŃ</button>
-    <ul id="list">
-        <li>Item-1</li>
-        <li>Item-2</li>
-        <li>Item-3</li>
-        <li>Item-4</li>
-    </ul>
-    <script src="script.js" type="text/javascript"></script> 
+    <div id="list-container">
+        <header>
+            <h1>LISTA ZAKUPÓW</h1>
+            <div id="button-container">
+                <button class="button" id="add-button">
+                    <img class="image" src="images/plus.svg" alt="">
+                    <p>DODAJ</p>
+                </button>
+                <button class="button" id="remove-button">
+                    <img class="image" src="images/minus.svg" alt="">
+                    <p>USUŃ</p>
+                </button>
+            </div>
+        </header>
+        <main>
+            <ul id="shopping-list">
+                <li class="shopping-list-element">
+                    <h1>Item-1</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum, doloremque assumenda
+                        tenetur architecto odio quidem possimus.
+                    </p>
+                </li>
+                <li class="shopping-list-element">
+                    <h1>Item-2</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum, doloremque assumenda
+                        tenetur architecto odio quidem possimus.
+                    </p>
+                </li>
+                <li class="shopping-list-element">
+                    <h1>Item-3</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum, doloremque assumenda
+                        tenetur architecto odio quidem possimus.
+                    </p>
+                </li>
+                <li class="shopping-list-element">
+                    <h1>Item-4</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum, doloremque assumenda
+                        tenetur architecto odio quidem possimus.
+                    </p>
+                </li>
+            </ul>
+        </main>
+    </div>
 </body>
+
 </html>

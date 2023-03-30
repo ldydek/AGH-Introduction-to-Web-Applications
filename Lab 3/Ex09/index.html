@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,42 +9,50 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="text/javascript" defer></script>
 </head>
+
 <body>
-    <section id="card">
+    <section id="entire-card">
         <header id="header">
-            <p id="p1">/</p>
+            <p id="backslash">/</p>
             <p>Nasi pracownicy</p>
         </header>
-        <main>
-            <div id="image-container">
+        <section id="card-with-buttons">
+            <aside>
                 <button>
                     <div class="arrow-button arrow-button--l"></div>
                 </button>
-                <div class="img div">
-                    <img class="img image" src="images/photo1.jpg" alt="photo" id="image">
+            </aside>
+            <main>
+                <div id="image-container">
+                    <img id="image" src="images/photo1.jpg" alt="photo" id="image">
                 </div>
+                <div id="main-container">
+                    <h1 id="name">Melisa Mcbride</h1>
+                    <h1 id="job">Product Manager</h1>
+                    <article>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda atque dignissimos ea eius,
+                        fugiat laudantium modi quaerat reiciendis, sapiente sit soluta. Ad alias et laborum placeat possimus
+                        quasi
+                        totam voluptatem voluptatum? Alias aperiam blanditiis commodi consequatur consequuntur cumque cupiditate
+                        deleniti distinctio dolorem eaque enim eos et ex fuga hic, impedit in laboriosam minus molestiae
+                        mollitia
+                        nam nesciunt.
+                    </article>
+                </div>
+            </main>
+            <aside>
                 <button>
                     <div class="arrow-button arrow-button--r"></div>
                 </button>
-            </div>
-            <h1 id="name">Melisa Mcbride</h1>
-            <h1 id="job">Product Manager</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda atque dignissimos ea eius,
-                fugiat laudantium modi quaerat reiciendis, sapiente sit soluta. Ad alias et laborum placeat possimus quasi
-                totam voluptatem voluptatum? Alias aperiam blanditiis commodi consequatur consequuntur cumque cupiditate
-                deleniti distinctio dolorem eaque enim eos et ex fuga hic, impedit in laboriosam minus molestiae mollitia
-                nam nesciunt.
-            </p>
-        </main>
-        <div>
-            <button>
-                <p>Losowa wizytówka</p>
-            </button>
-        </div>
+            </aside>
+        </section>
+        <button id="bottom-button">
+            <p>Losowa wizytówka</p>
+        </button>
         <footer>
             <p>&#8221</p>
         </footer>
     </section>
 </body>
+
 </html>

@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background-color: lightblue;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-top: 10px;
+}
+
+textarea {
+    height: 50px;
+}

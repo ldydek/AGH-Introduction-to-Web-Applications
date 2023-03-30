@@ -13,23 +13,24 @@ outside.addEventListener("click", displayWarning);
 function move(event) {
     let x = event.clientX;
     let y = event.clientY;
-    let viewPortDimensions = outside.getBoundingClientRect();
     let boardDimensions = board.getBoundingClientRect();
 
-    let ballHorizontalPosition =  Math.max((x - (viewPortDimensions.width - boardDimensions.width)/2 - ballWidth), 0);
-    ballHorizontalPosition = Math.min(ballHorizontalPosition, boardDimensions.width - 2*(ballWidth + borderThickness));
+    // window.innerHeight and window.innerWidth keep current viewport dimensions
+    let ballHorizontalPosition = Math.max((x - (window.innerWidth - boardDimensions.width) / 2 - ballWidth), 0);
+    ballHorizontalPosition = Math.min(ballHorizontalPosition, boardDimensions.width - 2 * (ballWidth + borderThickness));
 
-    let ballVerticalPosition =  Math.max((y - (viewPortDimensions.height - boardDimensions.height)/2 - ballWidth), 0);
-    ballVerticalPosition = Math.min(ballVerticalPosition, boardDimensions.height - 2*(ballWidth + borderThickness));
+    let ballVerticalPosition = Math.max((y - (window.innerHeight - boardDimensions.height) / 2 - ballWidth), 0);
+    ballVerticalPosition = Math.min(ballVerticalPosition, boardDimensions.height - 2 * (ballWidth + borderThickness));
 
-    ball.style.left =  ballHorizontalPosition + "px";
-    ball.style.top = ballVerticalPosition + "px";
+    ball.style.left = ballHorizontalPosition / (boardDimensions.width - 2*borderThickness) * 100 + "%";
+    ball.style.top = ballVerticalPosition / (boardDimensions.height - 2*borderThickness) * 100 + "%";
     info.style.display = "none";
     event.stopPropagation();
 }
 
 function displayWarning(event) {
+    let viewPortDimensions = outside.getBoundingClientRect();
     info.style.display = "block";
-    info.style.left = event.clientX + "px";
-    info.style.top = event.clientY + "px";
+    info.style.left = event.clientX / viewPortDimensions.width * 100 + "%";
+    info.style.top = event.clientY / viewPortDimensions.height * 100 + "%";
 }

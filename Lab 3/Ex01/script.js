@@ -1,4 +1,5 @@
-document.querySelector("#button").addEventListener('click', function() {
-    let imie = prompt("Twoje imię: ");
-    document.querySelector("#section").textContent = imie;
-});
+document.querySelector("#button").addEventListener('click', showName);
+
+function showName() {
+    document.querySelector("#name").textContent = prompt("Twoje imię: ");
+}

@@ -1,10 +1,10 @@
-document.querySelector("#button").addEventListener('click', function1);
+document.querySelector("#button").addEventListener('click', changePhoto);
 let counter = 0;
+let images = ["#photo1", "#photo2", "#photo3"];
 
-function function1() {
-    images = ["#photo1", "#photo2", "#photo3"];
-    document.querySelector(images[counter%3]).style.visibility = "visible";
-    document.querySelector(images[(counter+1)%3]).style.visibility = "hidden";
-    document.querySelector(images[(counter+2)%3]).style.visibility = "hidden";
+function changePhoto() {
+    document.querySelector(images[counter % 3]).style.display = "block";
+    document.querySelector(images[(counter + 1) % 3]).style.display = "none";
+    document.querySelector(images[(counter + 2) % 3]).style.display = "none";
     counter++;
 }

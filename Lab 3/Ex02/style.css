@@ -1,23 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 100px;    
+}
+
 .photo {
     width: 600px;
     height: 400px;
-    position: absolute;
 }
 
 #photo1 {
-    border: 5px solid red;
+    border: 10px solid red;
 }
 
 #photo2 {
-    border: 5px solid blue;
+    display: none;
+    border: 10px solid blue;
 }
 
 #photo3 {
-    border: 5px solid green;
+    display: none;
+    border: 10px solid green;
 }
 
 #button {
-    position: absolute;
-    top: 450px;
+    background-color: rgb(49, 48, 48);
+    color: white;
     font-size: 50px;
+    cursor: pointer;
+    padding: 12px 20px 12px 20px;
+    border-radius: 10px;
+}
+
+#button:hover {
+    background-color: rgb(31, 29, 29);
 }

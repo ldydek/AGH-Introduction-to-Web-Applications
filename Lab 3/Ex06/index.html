@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js" type="text/javascript" defer></script>
 </head>
+
 <body>
-    <main>
+    <main id="entire-container">
         <section id="user-section">
             <section class="single-user">
                 <div class="data">
-                    <p>Grzegorz Rogus</p>
-                    <p>500 600 700</p>
+                    <p id="name-paragraph">Grzegorz Rogus</p>
+                    <p id="phone-paragraph">500 600 700</p>
                 </div>
-                <div class="remove-data">
-                    <button class="remove-button"><i class="fa fa-trash"></i></button>
-                </div>
+                <button class="remove-button">
+                    <img id="trash" src="images/trash.svg" alt="">
+                </button>
             </section>
             <section class="single-user">
                 <div class="data">
                     <p>Jacek Dajda</p>
                     <p>500 600 700</p>
                 </div>
-                <div class="remove-data">
-                    <button class="remove-button"><i class="fa fa-trash"></i></button>
-                </div>
+                <button class="remove-button">
+                    <img id="trash" src="images/trash.svg" alt="">
+                </button>
             </section>
         </section>
         <section id="form-section">
@@ -41,11 +43,12 @@
                 <input type="text" id="phone">
             </div>
             <div>
-                <button id="add">
+                <button id="add-button">
                     Dodaj
                 </button>
             </div>
         </section>
     </main>
 </body>
+
 </html>

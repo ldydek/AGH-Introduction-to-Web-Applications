@@ -1,4 +1,4 @@
-let myInput = document.querySelector("#passwd");
+let firstInput = document.querySelector("#passwd");
 let secondInput = document.querySelector("#repeat-passwd");
 let letters = document.querySelector("#chars");
 let specialChar = document.querySelector("#special-char");
@@ -7,72 +7,65 @@ let digit = document.querySelector("#digit");
 let info = document.querySelector("#info > p");
 let eyeIcon1 = document.querySelector(".toggle-password1");
 let eyeIcon2 = document.querySelector(".toggle-password2");
-let ctr1 = 0;
-let ctr2 = 0;
+let submitButton = document.querySelector("#submit-button");
 
-myInput.addEventListener("keyup", checking);
-myInput.addEventListener("keyup", identity);
-secondInput.addEventListener("keyup", identity);
-eyeIcon1.addEventListener("click", showPassword1);
-eyeIcon2.addEventListener("click", showPassword2);
+firstInput.addEventListener("keyup", checkingAllConditions);
+secondInput.addEventListener("keyup", submitButtonHandler);
+eyeIcon1.addEventListener("click", () => { showPassword(eyeIcon1, firstInput) });
+eyeIcon2.addEventListener("click", () => { showPassword(eyeIcon2, secondInput) });
+submitButton.addEventListener("click", checkIdentity);
+submitButton.disabled = true;
 
 function checkingLetters() {
-    if (myInput.value.length >= 8) {
-        letters.classList.remove("invalid");
-        letters.classList.add("valid");
+    if (firstInput.value.length >= 8) {
+        changeFromRedToGreen(letters);
     }
     else {
-        letters.classList.remove("valid");
-        letters.classList.add("invalid");
+        changeFromGreenToRed(letters);
     }
 }
 
-function checkingSpecialChar() {
+function checkingSpecialChars() {
     let specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g;
-    if (myInput.value.match(specialChars)) {
-        specialChar.classList.remove("invalid");
-        specialChar.classList.add("valid");
+    if (firstInput.value.match(specialChars)) {
+        changeFromRedToGreen(specialChar);
     }
     else {
-        specialChar.classList.remove("valid");
-        specialChar.classList.add("invalid");
+        changeFromGreenToRed(specialChar);
     }
 }
 
 function checkingCapitalLetter() {
     let upperCaseLetters = /[A-Z]/g;
-    if (myInput.value.match(upperCaseLetters)) {  
-        capitalLetter.classList.remove("invalid");
-        capitalLetter.classList.add("valid");
-    } 
-    else {
-        capitalLetter.classList.remove("valid");
-        capitalLetter.classList.add("invalid");
+    if (firstInput.value.match(upperCaseLetters)) {
+        changeFromRedToGreen(capitalLetter);
     }
-    console.log(letters.classList);
+    else {
+        changeFromGreenToRed(capitalLetter);
+    }
 }
 
 function checkingDigit() {
     let numbers = /[0-9]/g;
-    if (myInput.value.match(numbers)) {  
-        digit.classList.remove("invalid");
-        digit.classList.add("valid");
-    } 
+    if (firstInput.value.match(numbers)) {
+        changeFromRedToGreen(digit);
+    }
     else {
-        digit.classList.remove("valid");
-        digit.classList.add("invalid");
+        changeFromGreenToRed(digit);
     }
 }
 
-function checking() {
+// checking all conditions here
+function checkingAllConditions() {
     checkingLetters();
-    checkingSpecialChar();
+    checkingSpecialChars();
     checkingCapitalLetter();
     checkingDigit();
 }
 
-function identity() {
-    if (myInput.value != secondInput.value) {
+// checking whether both inputs have the same string
+function checkIdentity() {
+    if (firstInput.value != secondInput.value) {
         info.innerText = "Hasła nie są identyczne!"
     }
     else {
@@ -80,22 +73,34 @@ function identity() {
     }
 }
 
-function showPassword1() {
-    if (myInput.type == "password") {
-        eyeIcon1.src = "images/slashed-eye.svg";
-        myInput.type = "text";
+function showPassword(eyeIconType, inputType) {
+    if (inputType.type == "password") {
+        eyeIconType.src = "images/slashed-eye.svg";
+        inputType.type = "text";
     } else {
-        eyeIcon1.src = "images/eye.svg";
-        myInput.type = "password";
+        eyeIconType.src = "images/eye.svg";
+        inputType.type = "password";
     }
 }
 
-function showPassword2() {
-    if (secondInput.type == "password") {
-        eyeIcon2.src = "images/slashed-eye.svg";
-        secondInput.type = "text";
-    } else {
-        eyeIcon2.src = "images/eye.svg";
-        secondInput.type = "password";
+// disabling or enabling submit button if necessary
+function submitButtonHandler() {
+    if (firstInput.value.length != 0 && secondInput.value.length != 0) {
+        submitButton.disabled = false;
     }
+    else {
+        submitButton.disabled = true;
+    }
+}
+
+// changing styling classes of a certain password requirement from red to green
+function changeFromRedToGreen(requirement) {
+    requirement.classList.remove("invalid");
+    requirement.classList.add("valid");
+}
+
+// changing styling classes of a certain password requirement from green to red
+function changeFromGreenToRed(requirement) {
+    requirement.classList.remove("valid");
+    requirement.classList.add("invalid");
 }
