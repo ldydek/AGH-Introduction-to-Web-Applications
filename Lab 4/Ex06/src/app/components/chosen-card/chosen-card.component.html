@@ -1,0 +1,5 @@
+<div *ngIf="card != undefined" class="div-with-content">
+    <h3>{{card.title}}</h3>
+    <p>{{card.description}}</p>
+</div>
+<div *ngIf="card == undefined" class="empty-div"></div>
