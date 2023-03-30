@@ -11,26 +11,27 @@ body {
 
 nav {
     display: flex;
-    flex-flow: column;
-    flex: 1.2;
-    align-items: center;
+    flex-direction: column;
     background-color: white;
-    height: 100vh;
-    border-right: 1px solid black;
+    padding-top: 20px;
+    flex: 1;
 }
 
 main {
-    flex: 5;
+    flex: 3;
+    margin: 1rem;
+    background-color: white;
+    height: 100vh;
 }
 
-nav > div {
+nav>div {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 5vw;
-    border-radius: 0% 5% 5% 0%;
+    height: 100px;
+    border-radius: 0 20px 20px 0;
     color: #0000ff;
-    padding-left: 5%;
+    padding-left: 10%;
+    margin-right: 20px;
 }
 
 nav div img {
@@ -54,6 +55,7 @@ nav div:hover {
 
 nav div span {
     flex: 6;
+    font-size: 1.2vw;
 }
 
 #number {
@@ -63,45 +65,40 @@ nav div span {
     margin-left: 0.5vw;
     margin-right: 2vw;
     color: #1f93a0;
+    width: 2rem;
     height: 2rem;
-    border-radius: 1rem;
+    border-radius: 50%;
     background-color: white;
-    color: green;
-    padding: 5%;
+    padding: max(5%, 10px);
     border: 1px solid #1f93a0;
 }
 
-main {
-    margin: 1rem;
-    background-color: white;
-    height: 100vh;
-}
-
 #paragraph {
-    font-size: 12px;
+    font-size: 15px;
 }
 
-nav div span {
-    font-size: 1.2vw;
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     nav div span {
-        visibility: hidden;
+        display: none;
     }
-    body nav {
-        transition: 2s ease;
+
+    nav {
         flex: 1;
     }
-    body main {
-        flex: 100;
+
+    main {
+        flex: 6;
+        transition: 3s ease;
     }
-    #number {
+
+    #menu-item {
         position: relative;
-        right: 7vw;
-        width: 3.5vw;
-        height: 3.5vw;
-        margin: 0;
-        transition: 2s ease;
+    }
+
+    #number {
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        left: 8vw;
     }
 }

@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
+
 <body>
-    <nav id="menu">
-        <div class="menu-item" id="item-1">
-            <a href="#item-1" class="menu-item header">Pozycja 1</a>
-            <div class="menu sub">
-                <a href="#" class="submenu-item">Item 1</a>
-                <a href="#" class="submenu-item">Item 2</a>
-                <a href="#" class="submenu-item">Item 3</a>
-                <a href="#" class="submenu-item">Item 1</a>
-                <a href="#" class="submenu-item">Item 2</a>
-                <a href="#" class="submenu-item">Item 3</a>
+    <nav id="menu-container">
+        <div class="menu-item">
+            <input class="show" type="radio" , name="menu">
+            <input class="hide" type="radio" , name="menu">
+            <div id="top-div" class="show-div">
+                <p>Pozycja 1</p>
+            </div>
+            <div class="hide-div">
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <p>item 4</p>
             </div>
         </div>
-        <div class="menu-item" id="item-2">
-            <a href="#item-2" class="menu-item header">Pozycja 2</a>
-            <div class="menu sub">
-                <a href="#" class="submenu-item">Item 1</a>
-                <a href="#" class="submenu-item">Item 2</a>
+        <div class="menu-item">
+            <input class="show" type="radio" , name="menu">
+            <input class="hide" type="radio" , name="menu">
+            <div class="show-div">
+                <p>Pozycja 2</p>
+            </div>
+            <div class="hide-div">
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <p>item 4</p>
             </div>
         </div>
-        <div class="menu-item" id="item-3">
-            <a href="#item-3" class="menu-item header">Pozycja 3</a>
-            <div class="menu sub">
-                <a href="#" class="submenu-item">Item 1</a>
-                <a href="#" class="submenu-item">Item 2</a>
-                <a href="#" class="submenu-item">Item 3</a>
+        <div class="menu-item">
+            <input class="show" type="radio" , name="menu">
+            <input class="hide" type="radio" , name="menu">
+            <div class="show-div">
+                <p>Pozycja 3</p>
             </div>
-         </div>
-        <div class="menu-item" id="item-4">
-            <a href="#item-4" class="menu-item header">Koniec</a>
+            <div class="hide-div">
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <p>item 4</p>
+            </div>
+        </div>
+        <div id="end" class="menu-item">
+            <input type="radio" , name="menu" , checked>
+            <p>Koniec</p>
         </div>
     </nav>
 </body>
+
 </html>

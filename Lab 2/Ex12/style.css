@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(249, 244, 244);
+}
+
+#main-container {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+}
+
+#shoe-container {
+    background: linear-gradient(35deg, #0b3e89, #508be2);
+    flex: 1;
+    margin: 50px;
+    margin-right: 0;
+    position: relative;
+}
+
+#trainer-image {
+    position: absolute;
+    right: 0;
+    width: 600px;
+    height: 500px;
+    transform: rotate(-20deg) translate(-15px, 30px);
+    z-index: 1;
+}
+
+#logo-image {
+    width: 75px;
+    height: 50px;
+    transform: scale(1.5, 1);
+    filter: invert(98%) sepia(0%) saturate(0%) hue-rotate(22deg) brightness(103%) contrast(103%);
+}
+
+#logo-container {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+}
+
+#share-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#share-image {
+    width: 30px;
+    height: 30px;
+    filter: invert(36%) sepia(61%) saturate(4268%) hue-rotate(207deg) brightness(99%) contrast(90%);
+}
+
+#writing {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    font-size: 150px;
+    color: lightgray;
+    letter-spacing: 25px;
+    opacity: 0.15;
+    text-align: center;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    flex: 1;
+    box-shadow: 0 0 10px gray;
+    padding: 30px;
+}
+
+header,
+article,
+nav,
+nav,
+footer {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+header>div {
+    display: flex;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+article>p {
+    color: gray;
+}
+
+.color-box,
+.size-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    background-color: #2173f0;
+    color: white;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#colors {
+    display: flex;
+    gap: 20px;
+}
+
+.color {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 10px gray;
+}
+
+.color:hover {
+    filter: brightness(80%)
+}
+
+
+#color1 {
+    background-color: #2173f0;
+}
+
+#color2 {
+    background-color: #ef4f41;
+}
+
+#color3 {
+    background-color: #28b765;
+}
+
+#color4 {
+    background-color: #ff5522;
+}
+
+#color5 {
+    background-color: #444444;
+}
+
+#sizes {
+    display: flex;
+    gap: 25px;
+}
+
+.size {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+    position: relative;
+}
+
+.size:hover {
+    filter: brightness(80%);
+}
+
+.size>input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.size>label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input:checked+label {
+    background-color: #045bde;
+    color: white;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.border {
+    border-top: 1px solid lightgray;
+}
+
+.button>img {
+    filter: invert(100%) sepia(41%) saturate(0%) hue-rotate(25deg) brightness(110%) contrast(101%);
+    width: 20px;
+    height: 20px;
+}
+
+.footer-button {
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.footer-button:hover {
+    background-color: #045bde;
+}
+
+#cost {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+#color-blue:target~#main-container #info .color-box #colors #color1,
+#color-red:target~#main-container #info .color-box #colors #color2,
+#color-green:target~#main-container #info .color-box #colors #color3,
+#color-orange:target~#main-container #info .color-box #colors #color4,
+#color-black:target~#main-container #info .color-box #colors #color5 {
+    border: 5px solid white;
+}
+
+#color-blue:target~#main-container #info header .button,
+#color-blue:target~#main-container #info footer .button,
+#color-blue:target~#main-container #shoe-container,
+#color-blue:target~#main-container #info .size-box #sizes .size input:checked+label {
+    filter: hue-rotate(0);
+}
+
+#color-red:target~#main-container #info header .button,
+#color-red:target~#main-container #info footer .button,
+#color-red:target~#main-container #shoe-container,
+#color-red:target~#main-container #info .size-box #sizes .size input:checked+label {
+    filter: hue-rotate(130deg);
+}
+
+#color-green:target~#main-container #info header .button,
+#color-green:target~#main-container #info footer .button,
+#color-green:target~#main-container #shoe-container,
+#color-green:target~#main-container #info .size-box .size input:checked,
+#color-green:target~#main-container #info .size-box #sizes .size input:checked+label {
+    filter: hue-rotate(240deg);
+}
+
+#color-orange:target~#main-container #info header .button,
+#color-orange:target~#main-container #info footer .button,
+#color-orange:target~#main-container #shoe-container,
+#color-orange:target~#main-container #info .size-box #sizes .size input:checked+label {
+    filter: hue-rotate(150deg);
+}
+
+#color-black:target~#main-container #info header .button,
+#color-black:target~#main-container #info footer .button,
+#color-black:target~#main-container #shoe-container,
+#color-black:target~#main-container #info .size-box #sizes .size input:checked+label {
+    filter: saturate(0)
+}
+
+@media screen and (max-width: 1100px) {
+    #main-container {
+        flex-direction: column;
+        height: 800px;
+        margin: 100px 10% 10% 100px;
+    }
+
+    #shoe-container {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #trainer-image {
+        position: static;
+        width: 400px;
+        height: 100%;
+        transform: rotate(-10deg) translate(-15px, 20px);
+        margin-right: 5vw;
+    }
+
+    header,
+    article,
+    nav,
+    footer {
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+}
