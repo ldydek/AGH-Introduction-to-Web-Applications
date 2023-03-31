@@ -1,0 +1,10 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+app-filter {
+    text-align: center;
+}

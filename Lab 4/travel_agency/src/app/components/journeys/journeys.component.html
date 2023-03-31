@@ -1,0 +1,20 @@
+<div id="card">
+    <div [ngClass]="{small_quantity:counter<10, big_quantity:counter>=10}" id="header">
+        <p>Twoja ilość zarezerwowanych wycieczek: {{counter}}</p>
+    </div>
+    <app-journey (delete)="removeJourney($event)" (counter)="add($event)" *ngFor="let journey of journeys" [journey]="journey" [minValue]="value1" [maxValue]="value2"></app-journey>
+    <div id="form">
+        <h1>Dodaj nową wycieczkę!</h1>
+        <form (ngSubmit)="addJourney()" [formGroup]="journeyForm">
+            <input type="text" placeholder="nazwa wycieczki" formControlName="name">
+            <input type="text" placeholder="państwo" formControlName="country">
+            <input type="text" placeholder="data rozpoczęcia" formControlName="startDate">
+            <input type="text" placeholder="data zakończenia" formControlName="endDate">
+            <input type="text" placeholder="cena" formControlName="price">
+            <input type="text" placeholder="dostępna ilość" formControlName="tickets">
+            <input type="text" placeholder="opic" formControlName="description">
+            <input type="text" placeholder="link do obrazka" formControlName="image">
+            <button [disabled]="journeyForm.invalid" type="submit">DODAJ</button>
+        </form>
+    </div>
+</div>
