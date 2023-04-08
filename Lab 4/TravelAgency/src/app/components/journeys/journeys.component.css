@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#journeys {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}

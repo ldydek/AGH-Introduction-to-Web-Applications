@@ -1,0 +1,23 @@
+#cart-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#cart {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    width: 700px;
+    padding-left: 30px;
+    border-radius: 5px;
+}
+
+#cart-header {
+    text-align: center;
+}
+
+#cost {
+    text-align: center;
+    font-weight: 600;
+}
