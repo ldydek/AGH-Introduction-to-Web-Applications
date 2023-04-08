@@ -1,22 +1,27 @@
-<h2>My solutions are presented below</h2>
+# TravelAgency
 
-<h3>Exercise 1</h3>
-<p>done</p>
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-<h3>Exercise 2</h3>
-<p>done</p>
+## Development server
 
-<h3>Exercise 3</h3>
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-![Ex03](https://user-images.githubusercontent.com/91955435/229384367-1620a201-ed03-49ee-83ea-d416d625685d.gif)
+## Code scaffolding
 
-<h3>Exercise 4</h3>
-<p>done</p>
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-<h3>Exercise 5</h3>
+## Build
 
-![Ex05](https://user-images.githubusercontent.com/91955435/228087441-d8a9dfc0-7794-4ba7-89db-ff958344fa5e.gif)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-<h3>Exercise 6</h3>
+## Running unit tests
 
-![Ex06](https://user-images.githubusercontent.com/91955435/228828749-5e86d19d-9ec3-4f08-a574-7c3465fd7b84.gif)
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

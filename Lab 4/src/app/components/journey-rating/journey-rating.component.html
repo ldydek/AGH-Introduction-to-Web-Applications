@@ -1,0 +1,10 @@
+<div id="container">
+    <h2>Leave a rating!</h2>
+    <div class="rating">
+        <span class="star" (click)="rate(1)" [ngClass]="{ 'filled': rating >= 1 }">&#9733;</span>
+        <span class="star" (click)="rate(2)" [ngClass]="{ 'filled': rating >= 2 }">&#9733;</span>
+        <span class="star" (click)="rate(3)" [ngClass]="{ 'filled': rating >= 3 }">&#9733;</span>
+        <span class="star" (click)="rate(4)" [ngClass]="{ 'filled': rating >= 4 }">&#9733;</span>
+        <span class="star" (click)="rate(5)" [ngClass]="{ 'filled': rating >= 5 }">&#9733;</span>
+    </div>
+</div>

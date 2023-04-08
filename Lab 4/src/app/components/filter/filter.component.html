@@ -1,0 +1,20 @@
+<div id="filter-container">
+    <h1>Filter section</h1>
+    <form>
+        <!-- filtering place -->
+        <section class="filter-section">
+            <h2>Place</h2>
+            <input id="name" name="journeyName" [(ngModel)]="journeyName" [ngModel]="filterJourneyName(journeyName)">
+        </section>
+        <!-- filtering country -->
+        <section class="filter-section">
+            <h2>Country</h2>
+            <input id="country" name="country" [(ngModel)]="country" [ngModel]="filterDestinationCountry(country)">
+        </section>
+        <!-- filtering price -->
+        <section class="filter-section">
+            <app-range-slider [minPrice]="minPrice" [maxPrice]="maxPrice"></app-range-slider>
+        </section>
+        <button id="reset-filters-button" (click)="resetFilters()">RESET</button>
+    </form>
+</div>

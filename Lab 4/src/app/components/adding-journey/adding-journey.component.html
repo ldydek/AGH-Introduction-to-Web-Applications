@@ -1,0 +1,14 @@
+<div id="form-container">
+    <h1>Add new journey!</h1>
+    <form [formGroup]="journeyForm" (ngSubmit)="addJourney()">
+        <input type="text" placeholder="nazwa wycieczki" formControlName="name">
+        <input type="text" placeholder="państwo" formControlName="country">
+        <input type="date" placeholder="data rozpoczęcia" formControlName="startDate">
+        <input type="date" placeholder="data zakończenia" formControlName="endDate">
+        <input type="number" placeholder="cena ($)" formControlName="price">
+        <input type="number" placeholder="dostępna ilość" formControlName="tickets">
+        <input type="text" placeholder="opis" formControlName="description">
+        <input type="text" placeholder="link do obrazka" formControlName="image">
+        <button type="submit">ADD</button>
+    </form>
+</div>
