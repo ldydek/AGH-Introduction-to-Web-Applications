@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 800px;
+    background-color: white;
     -webkit-box-shadow: 0 0 10px gray;
     box-shadow: 0 0 10px gray;
     padding-bottom: 20px;
