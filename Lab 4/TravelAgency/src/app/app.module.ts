@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,9 +35,10 @@ import { RangeSliderComponent } from './components/range-slider/range-slider.com
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxSliderModule
+    NgxSliderModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import { RangeSliderService } from 'src/app/services/range-slider.service';
 
@@ -9,30 +9,29 @@ import { RangeSliderService } from 'src/app/services/range-slider.service';
 })
 export class RangeSliderComponent {
 
-  @Input() minPrice: number;
-  @Input() maxPrice: number;
+  @Input() minValue: number;
+  @Input() maxValue: number;
 
-  options: Options;
+  range: Options;
 
   constructor(private rangeSliderService: RangeSliderService) { }
 
   ngOnInit() {
-    this.options = {
-      floor: this.minPrice,
-      ceil: this.maxPrice
+    this.range = {
+      floor: this.minValue,
+      ceil: this.maxValue
     };
-    this.rangeSliderService.getMinMaxDisplayedPrice(this.minPrice, this.maxPrice);
+    this.rangeSliderService.getMinMaxDisplayedPrice(this.minValue, this.maxValue);
   }
 
   // this function executes each time user will move a slider
   // sending min and max price to be display to range-slider service and later to journeys component
   handleSliderChange() {
-    this.rangeSliderService.getMinMaxDisplayedPrice(this.minPrice, this.maxPrice);
-  }
+    this.rangeSliderService.getMinMaxDisplayedPrice(this.minValue, this.maxValue);  }
 
   resetFilters() {
-    this.minPrice = this.options.floor || 0;
-    this.maxPrice = this.options.ceil || 100;
-    this.rangeSliderService.getMinMaxDisplayedPrice(this.minPrice, this.maxPrice);
+    this.minValue = this.range.floor || 0;
+    this.maxValue = this.range.ceil || 100;
+    this.rangeSliderService.getMinMaxDisplayedPrice(this.minValue, this.maxValue);
   }
 }

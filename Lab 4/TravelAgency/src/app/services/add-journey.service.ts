@@ -10,6 +10,7 @@ export class AddJourneyService {
 
   OnAddJourneyClicked = new EventEmitter<Journey>();
 
+  // passes data from add-journey to journeys component via service
   addJourney(journey: Journey) {
     this.OnAddJourneyClicked.emit(journey);
   }

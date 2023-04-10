@@ -13,7 +13,14 @@
         </section>
         <!-- filtering price -->
         <section class="filter-section">
-            <app-range-slider [minPrice]="minPrice" [maxPrice]="maxPrice"></app-range-slider>
+            <app-range-slider [minValue]="minPrice" [maxValue]="maxPrice"></app-range-slider>
+        </section>
+        <!-- filtering dates -->
+        <section class="filter-section">
+            <label for="starting-date">Starting date:</label>
+            <input type="date" id="starting-date" name="startDate" [(ngModel)]="startDate" (input)="onDatesChange()">
+            <label for="ending-date">Ending date:</label>
+            <input type="date" id="ending-date" name="endDate" [(ngModel)]="endDate" (input)="onDatesChange()">
         </section>
         <button id="reset-filters-button" (click)="resetFilters()">RESET</button>
     </form>

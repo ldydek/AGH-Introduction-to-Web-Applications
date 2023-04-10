@@ -7,10 +7,11 @@ import { Journey } from '../interfaces/journey';
 export class FilterPipe implements PipeTransform {
 
   // main function in pipes
-  transform(journeys: Journey[], journeyName: string, country: string, minPrice: number, maxPrice: number): Journey[] {
+  transform(journeys: Journey[], journeyName: string, country: string, minPrice: number, maxPrice: number, startDate: Date, endDate: Date): Journey[] {
     journeys = this.tripName(journeys, journeyName);
-    journeys  = this.country(journeys, country);
-    journeys  = this.priceRange(journeys, minPrice, maxPrice);
+    journeys = this.country(journeys, country);
+    journeys = this.priceRange(journeys, minPrice, maxPrice);
+    journeys = this.dateRange(journeys, startDate, endDate);
     return journeys;
   }
 
@@ -31,5 +32,17 @@ export class FilterPipe implements PipeTransform {
   // filtering via price range
   priceRange(journeys: Journey[], minPrice: number, maxPrice: number) {
     return journeys.filter(journey => journey.tourPrice >= minPrice && journey.tourPrice <= maxPrice);
+  }
+
+  // filtering via date range
+  dateRange(journeys: Journey[], startDate: Date, endDate: Date) {
+    return journeys.filter(journey => this.convertToDateType(journey.startDate) >= startDate && this.convertToDateType(journey.endDate) <= endDate);
+  }
+
+  // converting from string to Date type
+  private convertToDateType(dateString: string): Date {
+    const [year, month, day] = dateString.split('-').map(part => parseInt(part));
+    return new Date(year, month - 1, day);
+    // months are indexed from 0 that's why we substract 1
   }
 }

@@ -21,6 +21,8 @@ export class JourneysComponent {
   country: string;
   displayedMinPrice: number = Infinity;
   displayedMaxPrice: number = -Infinity;
+  displayedStartDate: Date = this.findStartDate();
+  displayedEndDate: Date = this.findEndDate();
 
   constructor(private addJourneyService: AddJourneyService, private filterService: FilterService, private rangeSliderService: RangeSliderService) { }
 
@@ -32,7 +34,9 @@ export class JourneysComponent {
     this.filterJourneyName();
     this.filterCountry();
     this.getMinMaxPrice();
+    this.getStartEndDate();
     this.displayPriceFromSlider();
+    this.receiveStartEndDate();
   }
 
   // finds tours with min and max prices from i given tour list
@@ -40,6 +44,28 @@ export class JourneysComponent {
     this.journeys.sort((a, b) => a.tourPrice - b.tourPrice);
     this.minPrice = this.journeys[0].tourPrice;
     this.maxPrice = this.journeys[this.journeys.length - 1].tourPrice;
+  }
+
+  // finding earliest starting date
+  findStartDate(): Date {
+    let earliestDate: Date = new Date(this.journeys[0].startDate);
+    for (const journey of this.journeys) {
+      if (new Date(journey.startDate) < earliestDate) {
+        earliestDate = new Date(journey.startDate);
+      }
+    }
+    return earliestDate;
+  }
+
+  // finding latest ending date
+  findEndDate(): Date {
+    let latestDate: Date = new Date(this.journeys[0].endDate);
+    for (const journey of this.journeys) {
+      if (new Date(journey.endDate) > latestDate) {
+        latestDate = new Date(journey.startDate);
+      }
+    }
+    return latestDate;
   }
 
   // adds new journey to the trip list from a form (addingJourney component)
@@ -74,6 +100,19 @@ export class JourneysComponent {
   // (some filter could be used already)
   getMinMaxPrice() {
     return this.filterService.getMinMaxPrice(this.minPrice, this.maxPrice);
+  }
+
+  // sending earliest and latest trip date to the filter component via service
+  getStartEndDate() {
+    return this.filterService.getStartEndDate(this.findStartDate(), this.findEndDate());
+  }
+
+  // receiving earliest and latest trip dates from a filter component via service
+  receiveStartEndDate() {
+    this.filterService.OnStartEndDateFiltered2.subscribe(([startDate, endDate]) => {
+      this.displayedStartDate = this.filterService.convertToDateType(startDate);
+      this.displayedEndDate = this.filterService.convertToDateType(endDate);
+    })
   }
 
   // receiving min and max price to be displayed from range-slider component

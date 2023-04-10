@@ -6,7 +6,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 export class RangeSliderService {
 
   // sends minimum and maximum price from range-slider component to journeys
-
   OnMinMaxPriceFiltered = new EventEmitter<number[]>;
   constructor() { }
 

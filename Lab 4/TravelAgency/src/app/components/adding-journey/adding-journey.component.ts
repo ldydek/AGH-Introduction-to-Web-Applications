@@ -15,6 +15,7 @@ export class AddingJourneyComponent {
 
   constructor(private addJourneyService: AddJourneyService) { }
 
+  // creating a form group
   ngOnInit(): void {
     this.journeyForm = new FormGroup({
       name : new FormControl("",Validators.required),
