@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import { RangeSliderService } from 'src/app/services/range-slider.service';
 
@@ -7,7 +7,7 @@ import { RangeSliderService } from 'src/app/services/range-slider.service';
   templateUrl: './range-slider.component.html',
   styleUrls: ['./range-slider.component.css']
 })
-export class RangeSliderComponent {
+export class RangeSliderComponent implements OnChanges {
 
   @Input() minValue: number;
   @Input() maxValue: number;
@@ -22,6 +22,13 @@ export class RangeSliderComponent {
       ceil: this.maxValue
     };
     this.rangeSliderService.getMinMaxDisplayedPrice(this.minValue, this.maxValue);
+  }
+
+  ngOnChanges(): void {
+    this.range = {
+      floor: this.minValue,
+      ceil: this.maxValue
+    };
   }
 
   // this function executes each time user will move a slider

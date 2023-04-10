@@ -44,6 +44,8 @@ export class JourneysComponent {
     this.journeys.sort((a, b) => a.tourPrice - b.tourPrice);
     this.minPrice = this.journeys[0].tourPrice;
     this.maxPrice = this.journeys[this.journeys.length - 1].tourPrice;
+    this.displayedMinPrice = this.minPrice;
+    this.displayedMaxPrice = this.maxPrice;
   }
 
   // finding earliest starting date
@@ -54,6 +56,7 @@ export class JourneysComponent {
         earliestDate = new Date(journey.startDate);
       }
     }
+    earliestDate.setHours(0, 0, 0, 0);
     return earliestDate;
   }
 
@@ -62,9 +65,10 @@ export class JourneysComponent {
     let latestDate: Date = new Date(this.journeys[0].endDate);
     for (const journey of this.journeys) {
       if (new Date(journey.endDate) > latestDate) {
-        latestDate = new Date(journey.startDate);
+        latestDate = new Date(journey.endDate);
       }
     }
+    latestDate.setHours(0, 0, 0, 0);
     return latestDate;
   }
 
@@ -73,6 +77,10 @@ export class JourneysComponent {
     this.addJourneyService.OnAddJourneyClicked.subscribe((journey: Journey) => {
       this.journeys.push(journey);
       this.findMinMaxPrice();
+      this.getMinMaxPrice();
+      this.findStartDate();
+      this.findEndDate();
+      this.getStartEndDate();
     })
   }
 
@@ -81,6 +89,9 @@ export class JourneysComponent {
     this.journeys = this.journeys.filter(j => j != journeyToRemove)
     this.findMinMaxPrice();
     this.getMinMaxPrice();
+    this.findStartDate();
+    this.findEndDate();
+    this.getStartEndDate();
   }
 
   // filter methods below
