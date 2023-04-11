@@ -19,8 +19,8 @@ export class JourneysComponent {
   // filters properties below
   journeyName: string;
   country: string;
-  displayedMinPrice: number = Infinity;
-  displayedMaxPrice: number = -Infinity;
+  displayedMinPrice: number = this.findMinMaxPrice()[0];
+  displayedMaxPrice: number = this.findMinMaxPrice()[1];
   displayedStartDate: Date = this.findStartDate();
   displayedEndDate: Date = this.findEndDate();
 
@@ -37,38 +37,40 @@ export class JourneysComponent {
     this.getStartEndDate();
     this.displayPriceFromSlider();
     this.receiveStartEndDate();
+    this.filterService.convertToDateType('2010-02-02');
   }
 
   // finds tours with min and max prices from i given tour list
-  findMinMaxPrice(): void {
+  findMinMaxPrice(): number[] {
     this.journeys.sort((a, b) => a.tourPrice - b.tourPrice);
     this.minPrice = this.journeys[0].tourPrice;
     this.maxPrice = this.journeys[this.journeys.length - 1].tourPrice;
     this.displayedMinPrice = this.minPrice;
     this.displayedMaxPrice = this.maxPrice;
+    return [this.minPrice, this.maxPrice];
   }
 
   // finding earliest starting date
   findStartDate(): Date {
-    let earliestDate: Date = new Date(this.journeys[0].startDate);
+    let earliestDate: Date = this.filterService.convertToDateType(this.journeys[0].startDate);
     for (const journey of this.journeys) {
-      if (new Date(journey.startDate) < earliestDate) {
-        earliestDate = new Date(journey.startDate);
+      let newDate: Date = this.filterService.convertToDateType(journey.startDate);
+      if (newDate < earliestDate) {
+        earliestDate = newDate;
       }
     }
-    earliestDate.setHours(0, 0, 0, 0);
     return earliestDate;
   }
 
   // finding latest ending date
   findEndDate(): Date {
-    let latestDate: Date = new Date(this.journeys[0].endDate);
+    let latestDate: Date = this.filterService.convertToDateType(this.journeys[0].endDate);
     for (const journey of this.journeys) {
-      if (new Date(journey.endDate) > latestDate) {
-        latestDate = new Date(journey.endDate);
+      let newDate: Date = this.filterService.convertToDateType(journey.endDate);
+      if (newDate > latestDate) {
+        latestDate = newDate;
       }
     }
-    latestDate.setHours(0, 0, 0, 0);
     return latestDate;
   }
 
@@ -96,13 +98,13 @@ export class JourneysComponent {
 
   // filter methods below
   filterJourneyName() {
-    this.filterService.OnFilterJourneyNameService.subscribe((journeyName) => {
+    this.filterService.OnFilterJourneyName.subscribe((journeyName) => {
       this.journeyName = journeyName;
     })
   }
 
   filterCountry() {
-    this.filterService.OnFilterDestinationCountryService.subscribe((country) => {
+    this.filterService.OnFilterDestinationCountry.subscribe((country) => {
       this.country = country;
     })
   }

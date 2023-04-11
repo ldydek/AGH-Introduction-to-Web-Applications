@@ -13,6 +13,7 @@ export class JourneyComponent {
   @Input() journey: Journey;
   @Input() minPrice: number;
   @Input() maxPrice: number;
+  // receiving from a parent minimum and maximum prices of entire trip list
 
   // output for removing entire tour and notifying parent component
   @Output() onDeleteJourney: EventEmitter<Journey> = new EventEmitter();

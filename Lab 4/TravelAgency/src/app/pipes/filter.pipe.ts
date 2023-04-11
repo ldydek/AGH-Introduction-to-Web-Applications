@@ -40,9 +40,9 @@ export class FilterPipe implements PipeTransform {
   }
 
   // converting from string to Date type
-  private convertToDateType(dateString: string): Date {
-    const [year, month, day] = dateString.split('-').map(part => parseInt(part));
-    return new Date(year, month - 1, day);
-    // months are indexed from 0 that's why we substract 1
+  convertToDateType(dateString: string): Date {
+    let newDate: Date = new Date(dateString);
+    newDate.setHours(0, 0, 0, 0);
+    return newDate;
   }
 }

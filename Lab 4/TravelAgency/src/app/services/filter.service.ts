@@ -5,24 +5,23 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class FilterService {
 
-  // sharing data from journeys to filter via service
-
   constructor() { }
 
-  OnFilterJourneyNameService = new EventEmitter<string>;
-  OnFilterDestinationCountryService = new EventEmitter<string>;
+  // sharing data from journeys to filter via service (determining beginning filter values)
   OnMinMaxPriceFiltered = new EventEmitter<number[]>;
   OnStartEndDateFiltered = new EventEmitter<Date[]>;
 
-  // this event emitter goes from filter to journeys via service unlike the others
+  // sharing data from filter to journeys via service (values changed by filters)
+  OnFilterJourneyName = new EventEmitter<string>;
+  OnFilterDestinationCountry = new EventEmitter<string>;
   OnStartEndDateFiltered2 = new EventEmitter<string[]>;
 
   filterJourneyName(journeyName: string) {
-    this.OnFilterJourneyNameService.emit(journeyName);
+    this.OnFilterJourneyName.emit(journeyName);
   }
 
   filterDestinationCountry(country: string) {
-    this.OnFilterDestinationCountryService.emit(country);
+    this.OnFilterDestinationCountry.emit(country);
   }
 
   // minimum and maximum trip prices
@@ -42,8 +41,8 @@ export class FilterService {
 
   // converting from string to Date type
   convertToDateType(dateString: string): Date {
-    const [year, month, day] = dateString.split('-').map(part => parseInt(part));
-    return new Date(year, month - 1, day);
-    // months are indexed from 0 that's why we substract 1
+    let newDate: Date = new Date(dateString);
+    newDate.setHours(0, 0, 0, 0);
+    return newDate;
   }
 }

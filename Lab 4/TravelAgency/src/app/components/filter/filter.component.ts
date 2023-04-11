@@ -41,23 +41,24 @@ export class FilterComponent {
   }
 
   // executes each time user change input date
-  onDatesChange() {
+  onDatesChange(): void {
     this.filterService.getStartEndDate2(this.startDate, this.endDate);
   }
 
+  // sending below properties to filer service and later to journeys
   filterJourneyName(journeyName: string): void {
     this.filterService.filterJourneyName(journeyName);
   }
 
-  filterDestinationCountry(country: string) {
+  filterDestinationCountry(country: string): void {
     this.filterService.filterDestinationCountry(country);
   }
 
-  filterStartEndDate() {
+  filterStartEndDate(): void {
     this.filterService.getStartEndDate2(this.startDate, this.endDate);
   }
 
-  resetFilters() {
+  resetFilters(): void {
     this.journeyName = '';
     this.country = '';
     this.rangeSliderComponent.resetFilters();
