@@ -1,6 +1,0 @@
-<app-filter></app-filter>
-<div id="journeys">
-    <app-journey [journey]="journey" [minPrice]="minPrice" [maxPrice]="maxPrice"
-        (onDeleteJourney)="removeJourney($event)" (onAddJourney)="addJourney()"
-        *ngFor="let journey of journeys | filter : journeyName : country : displayedMinPrice : displayedMaxPrice : displayedStartDate : displayedEndDate"></app-journey>
-</div>
