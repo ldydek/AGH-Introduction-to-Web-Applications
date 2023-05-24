@@ -1,0 +1,3 @@
+<p>Min price: {{minValue}}$</p>
+<p>Max price: {{maxValue}}$</p>
+<ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="range" (userChange)="handleSliderChange()"></ngx-slider>

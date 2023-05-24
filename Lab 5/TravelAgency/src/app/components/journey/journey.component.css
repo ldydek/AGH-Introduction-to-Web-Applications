@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#card {
+    display: flex;
+    align-items: center;
+    -webkit-box-shadow: 0 0 10px gray;
+    box-shadow: 0 0 10px gray;
+    width: 700px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: wheat;
+    transition: transform 0.3s ease-in-out;
+}
+
+#card:hover {
+    transform: scale(1.05);
+}
+
+#photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#content-with-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 2;
+}
+
+#buttons {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+
+#buttons>#add-journey-button,
+#remove-journey-button {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#buttons>#add-journey-button:hover,
+#remove-journey-button:hover {
+    background-color: black;
+}
+
+.add-reservation-button {
+    background-color: green;
+    border: none;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.remove-reservation-button {
+    background-color: red;
+    border: none;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.max-amount-of-tickets {
+    background-color: rgb(236, 115, 115);
+}
+
+.lack-of-tickets {
+    background-color: rgb(90, 199, 90);
+}
+
+.small-amount-of-tickets {
+    color: red;
+}
+
+.cheapest-journey {
+    border: 3px solid red;
+}
+
+.most-expensive-journey {
+    border: 3px solid green;
+}
