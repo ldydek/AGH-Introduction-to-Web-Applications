@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-image: url("images/board-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.heart {
+    display: inline-block;
+    font-size: 40px;
+    opacity: 0;
+}
+
+#nickname-container {
+    font-size: 50px;
+    color: white;
+}
+
+#score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+#score>p {
+    font-family: Consolas, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    width: 60vw;
+    height: 80vh;
+    color: white;
+    background-color: #222222;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+#start>p {
+    text-align: center;
+    padding: 5%;
+    font-size: max(4vw, 50px);
+}
+
+#start>input {
+    width: max(30vw, 50px);
+    height: 40px;
+    border: none;
+    font-size: 150%;
+    padding-left: 10px;
+    color: red;
+    outline-color: red;
+    background-color: black;
+}
+
+#start>img {
+    width: max(10vw, 150px);
+    height: max(10vw, 150px);
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(325deg) brightness(104%) contrast(101%);
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(10, 10, 10);
+    color: white;
+    padding-left: max(1%, 30px);
+    padding-right: max(1%, 30px);
+    padding-top: max(1%, 15px);
+    padding-bottom: max(1%, 15px);
+    border-radius: 7px;
+    font-size: 1em;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+    transform: scale(1.15);
+}
+
+.zombie {
+    width: 200px;
+    height: 312px;
+    position: absolute;
+    left: 110%;
+    background-image: url("images/walkingdead.png");
+}
+
+@keyframes walk {
+    100% {
+        left: -300px;
+    }
+}
+
+@keyframes move {
+    100% {
+        background-position: -1800px 0;
+    }
+
+}
+
+#finish {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: max(60vw, 500px);
+    height: 80vh;
+    color: white;
+    background-color: #222222;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+#finish>p {
+    text-align: center;
+    padding: 2%;
+    font-size: max(4vw, 50px);
+}
+
+.score-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 1%;
+    z-index: 1001;
+}
+
+.score-container > p {
+    width: 25%;
+    text-align: center;
+    font-size: 25px;
+}
