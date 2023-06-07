@@ -18,9 +18,10 @@
 
 <h3>Exercise 5</h3>
 
-https://github.com/ldydek/AGH-Introduction-to-Web-Applications/assets/91955435/b8ff57eb-ef4d-4bb0-bb4f-6422aca4413b
+![Ex05](https://github.com/ldydek/AGH-Introduction-to-Web-Applications/assets/91955435/df529b7a-eac3-413a-8def-8a4a21ba1e41)
 
 <h3>Exercise 6</h3>
 
-https://github.com/ldydek/AGH-Introduction-to-Web-Applications/assets/91955435/6b2047a4-7521-41ec-9816-af5a2ab0d020
+![Ex06](https://github.com/ldydek/AGH-Introduction-to-Web-Applications/assets/91955435/5f7abb10-af19-4bfc-bed2-f28886f3d084)
+
 
