@@ -24,4 +24,6 @@
 
 ![Ex06](https://github.com/ldydek/AGH-Introduction-to-Web-Applications/assets/91955435/5f7abb10-af19-4bfc-bed2-f28886f3d084)
 
+<h3>Exercise 8</h3>
 
+![Ex08](https://github.com/ldydek/AGH-Introduction-to-Web-Applications/assets/91955435/1cc1d844-2ed8-4c5e-9abe-554b9f784c17)
